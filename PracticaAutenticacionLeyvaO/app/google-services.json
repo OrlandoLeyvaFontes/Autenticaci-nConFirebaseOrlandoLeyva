@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "376824040558",
+    "project_id": "practicaautenticacion-8a2a8",
+    "storage_bucket": "practicaautenticacion-8a2a8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376824040558:android:567e5bf1ee32027247ea7f",
+        "android_client_info": {
+          "package_name": "orlando.leyva.practicaautenticacionleyvao"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD91zj72Gqfq-tDr8_LOlAXmPKFZL1izE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
