@@ -5,6 +5,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import orlando.leyva.practicaautenticacionleyvao.presentacion.home.HomeScreen
 import orlando.leyva.practicaautenticacionleyvao.presentacion.inicial.InicialScreen
 import orlando.leyva.practicaautenticacionleyvao.presentacion.login.LoginScreen
 import orlando.leyva.practicaautenticacionleyvao.presentacion.signup.SignUpScreen
@@ -12,18 +14,22 @@ import orlando.leyva.practicaautenticacionleyvao.presentacion.signup.SignUpScree
 @Composable
 fun NavigationWrapper(navHostController: NavHostController, auth: FirebaseAuth){
 
-    NavHost(navHostController, startDestination = "inicial"){
+    val startDest = if (auth.currentUser != null) "home" else "inicial"
+    NavHost(navHostController, startDestination = startDest){
         composable("inicial"){
             InicialScreen(
                 navigationToLogin = {navHostController.navigate("login")},
                 naviationToSignUp = {navHostController.navigate("signUp")}
             )
         }
-        composable("Login"){
-            LoginScreen(auth)
+        composable("login"){
+            LoginScreen(auth){navHostController.navigate("home")}
         }
         composable("signUp") {
-            SignUpScreen(auth)
+            SignUpScreen(auth) { navHostController.navigate("home") }
+        }
+        composable("home"){
+            HomeScreen(auth = auth) { navHostController.navigate("inicial") }
         }
     }
 

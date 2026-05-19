@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Button
@@ -41,7 +42,7 @@ import orlando.leyva.practicaautenticacionleyvao.ui.theme.ShapeButton
 @Preview
 @Composable
 fun InicialScreen(navigationToLogin: () -> Unit = {}, naviationToSignUp: () -> Unit = {}){
-    Column(modifier = Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Grey, Black), startY = 0f, endY = 600f)),
+    Column(modifier = Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Grey, Black), startY = 0f, endY = 600f)).systemBarsPadding(),
         horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(modifier = Modifier.weight(1f))
 

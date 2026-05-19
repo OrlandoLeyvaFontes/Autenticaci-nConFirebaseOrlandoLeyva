@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -34,12 +35,13 @@ import orlando.leyva.practicaautenticacionleyvao.ui.theme.SelectedField
 import orlando.leyva.practicaautenticacionleyvao.ui.theme.UnselectedField
 
 @Composable
-fun LoginScreen(auth: FirebaseAuth) {
+fun LoginScreen(auth: FirebaseAuth, navigateToHome: () -> Unit) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+    val context = androidx.compose.ui.platform.LocalContext.current
 
     Column(
-        modifier = Modifier.fillMaxSize().background(Black).padding(horizontal = 32.dp),
+        modifier = Modifier.fillMaxSize().background(Black).systemBarsPadding().padding(horizontal = 32.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(Modifier.height(48.dp))
@@ -72,8 +74,14 @@ fun LoginScreen(auth: FirebaseAuth) {
         Button(
             onClick = {
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
-                    if (task.isSuccessful) Log.i("aris", "LOGIN OK")
-                    else Log.i("aris", "LOGIN KO")
+                    if (task.isSuccessful) {
+                        Log.i("aris", "LOGIN OK")
+                        navigateToHome()
+                    }
+                    else {
+                        Log.i("aris", "LOGIN KO")
+                        android.widget.Toast.makeText(context, "Error: ${task.exception?.message}", android.widget.Toast.LENGTH_LONG).show()
+                    }
                 }
             },
             modifier = Modifier.fillMaxWidth()

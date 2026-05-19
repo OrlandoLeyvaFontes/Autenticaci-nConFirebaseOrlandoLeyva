@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="orlando.leyva.practicaautenticacionleyvao" />
+                  <option name="mobileSdkAppId" value="1:376824040558:android:567e5bf1ee32027247ea7f" />
+                  <option name="projectId" value="practicaautenticacion-8a2a8" />
+                  <option name="projectNumber" value="376824040558" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
