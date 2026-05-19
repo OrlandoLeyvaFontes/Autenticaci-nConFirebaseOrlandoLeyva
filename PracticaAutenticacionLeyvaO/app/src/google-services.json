@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "707060481935",
+    "project_id": "ejemplologin-b7c67",
+    "storage_bucket": "ejemplologin-b7c67.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707060481935:android:68c6c5a695ddcd5763d5fa",
+        "android_client_info": {
+          "package_name": "leyva.orlando.ejemploauthifirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGymcqUfsJ8BlvuripOpqB7ZiBWAhS_GU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707060481935:android:5000effc336366d663d5fa",
+        "android_client_info": {
+          "package_name": "orlando.leyva.practicaautenticacionleyvao"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGymcqUfsJ8BlvuripOpqB7ZiBWAhS_GU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
